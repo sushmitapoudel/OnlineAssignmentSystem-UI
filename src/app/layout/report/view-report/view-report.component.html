@@ -1,0 +1,25 @@
+<div class="card-body table-responsive">
+    <div >
+    <label>Start Date</label>  <input class="col-md-3 control-label " type="date"  value = "{{startDate}}" placeholder="Start Date" (change)= onStartDateChange($event)>
+    </div>
+    <div>
+        <label>End Date</label>
+        <input class="col-md-3 control-label " type="date" value="{{endDate}}" (change)= onEndDateChange($event)>
+    </div>
+    <div>
+         <ngx-datatable #table class="bootstrap" [rows]="rows" [loadingIndicator]="loadingIndicator" [columns]="columns" [columnMode]="'force'"
+            [headerHeight]="40" [footerHeight]="40" [limit]="10" [rowHeight]="'auto'" [reorderable]="reorderable">
+            <ngx-datatable-column name="S.N">
+                <ng-template let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                    {{rowIndex+1}}
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name ="Created Date"></ngx-datatable-column>
+            <ngx-datatable-column name ="Content"></ngx-datatable-column>
+            <ngx-datatable-column name ="Type"></ngx-datatable-column>
+        </ngx-datatable> 
+
+    </div>
+</div>
+
+
